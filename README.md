@@ -1,6 +1,6 @@
 # FunctionalAnalysisTest
 
-This script is an attempt to generalize the Functional Analysis approach to calculating p-values presented in http://dx.doi.org/10.1101.373845.  This paper presents a method using a particular model, but I want to apply it to sparse time series with spline fits.  
+This script is an attempt to generalize the Functional Analysis approach to calculating p-values presented in http://dx.doi.org/10.1101/373845.  This paper presents a method using a particular model, but I want to apply it to sparse time series with spline fits.  
 
 The comparison I'm making is between a control time series and a time series with an added perturbation, with somewhere between 4 and 20 sampled measurements through time. The functional analysis approach is to calculate the residual sum of squares (RSS) for different spline fits. First, for the null hypothesis, we assume the perturbation has no effect and we fit a single spline to both traces, and calculate the RSS.  For the alternative hypothesis, we fit two splines and calculate the sum of the two RSS's.  A F-statistic is calculated to discriminate between these two models, which can then be converted into a p-value. 
 
