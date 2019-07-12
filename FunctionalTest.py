@@ -122,12 +122,12 @@ def Functional_pval(a_vec,b_vec,a_xvals,b_xvals,d1 = None, d2 = None):
     b_xvals = [x + 0.00001 if x in a_xvals else x for x in b_xvals]
 
     #So when we join our two trends together, the xvalues sort nicely
-    full_range = sorted(a_xvals+b_xvals)
+    full_range = sorted(list(a_xvals)+list(b_xvals))
 
     #BUT we have to keep track of the indexing too, 
     # for when we join the a and b y-value lists together.
     # This ID's the index order we want to draw from the joined list
-    new_indexes = [i[0] for i in sorted(enumerate(a_xvals+b_xvals),key=lambda x: x[1])]
+    new_indexes = [i[0] for i in sorted(enumerate(list(a_xvals)+list(b_xvals)),key=lambda x: x[1])]
 
     #Combine the y-value lists and order them to match the x-values
     full_vec = list(a_vec) + list(b_vec)
